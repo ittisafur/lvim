@@ -1,5 +1,4 @@
 -- THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
-
 -- general
 lvim.format_on_save = true
 lvim.lint_on_save = true
@@ -187,6 +186,7 @@ lvim.plugins ={
                 "javascript.jsx",
 								"svelte",
 								"vue",
+                "php",
 							},
 							root_dir = function(fname)
 								return vim.loop.cwd()
@@ -199,4 +199,13 @@ lvim.plugins ={
 			end,
 		},
 }
-
+local lsp = require "lsp"
+require("lspconfig").tailwindcss.setup {
+  cmd = {
+    "node",
+    DATA_PATH .. "/lspinstall/tailwindcss/tailwindcss-intellisense/extension/dist/server/tailwindServer.js",
+    "--stdio",
+  },
+  on_attach = lsp.common_on_attach,
+  on_init = lsp.common_on_init,
+}
