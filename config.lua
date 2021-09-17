@@ -44,6 +44,7 @@ lvim.builtin.dashboard.active = true
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.side = "left"
 lvim.builtin.nvimtree.show_icons.git = 0
+lvim.builtin.nvimtree.hide_dotfiles = 0
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {}
@@ -92,50 +93,41 @@ lvim.builtin.treesitter.highlight.enabled = true
 -- }
 lvim.lang.javascript.formatters = {
   {
-    exe = "prettier", -- can be prettierd eslint, or eslint_d as well
-    args = {},
+    exe = "prettier" -- can be prettierd eslint, or eslint_d as well
   },
 }
 lvim.lang.javascriptreact.formatters = {
   {
-    exe = "prettier", -- can be prettierd eslint, or eslint_d as well
-    args = {},
+    exe = "prettier" -- can be prettierd eslint, or eslint_d as well
   },
 }
 
 lvim.lang.typescript.formatters = {
   {
-    exe = "prettier", -- can be prettierd, eslint or eslint_d as well
-    args = {},
+    exe = "prettier" -- can be prettierd, eslint or eslint_d as well
   },
 }
 lvim.lang.typescriptreact.formatters = {
   {
-    exe = "prettier", -- can be prettierd, eslint or eslint_d as well
-    args = {},
+    exe = "prettier" -- can be prettierd, eslint or eslint_d as well
   },
 }
-lvim.lang.html.formatter = {
-  {
-    exe = "prettier",
-    args = {}
-  }
-}
 
+lvim.lang.html.formatters = { { exe = 'prettier' } }
 lvim.lang.css.formatter = {
   {
-    exe = "prettier",
-    args = {}
+    exe = "prettier"
   }
 }
 
-lvim.lang.php.formatters = {
-  {
-    command = "phpcbf",
-    args = {"--standard=PSR12", "-" },
-    to_stdin = true
-  }
-}
+lvim.lang.php.formatters = { { exe = 'phpcbf' } }
+-- lvim.lang.php.formatters = {
+--   {
+--     command = "phpcbf",
+--     args = {"--standard=PSR12", "-" },
+--     to_stdin = true
+--   }
+-- }
 -- Additional Plugins
 -- lvim.plugins = {
 --     {"folke/tokyonight.nvim"}, {
@@ -150,7 +142,7 @@ lvim.lang.php.formatters = {
 --   { "BufWinEnter", "*.lua", "setlocal ts=8 sw=8" },
 -- }
 vim.api.nvim_set_keymap("n", "<C-f>", ":Telescope find_files<cr>", { noremap = true, silent = true })
--- disable <leader>f 
+-- disable <leader>f
 lvim.builtin.which_key.mappings["f"] = {}
 -- Transparent
 lvim.transparent_window = true
