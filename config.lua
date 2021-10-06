@@ -120,14 +120,13 @@ lvim.lang.css.formatter = {
   }
 }
 
-lvim.lang.php.formatters = { { exe = 'phpcbf' } }
--- lvim.lang.php.formatters = {
---   {
---     command = "phpcbf",
---     args = {"--standard=PSR12", "-" },
---     to_stdin = true
---   }
--- }
+lvim.lang.php.formatters ={
+  {
+    exe = "phpcbf",
+    args = {"--standard=PSR12", "-q", "-" },
+    stdout = true
+  }
+}
 -- Additional Plugins
 -- lvim.plugins = {
 --     {"folke/tokyonight.nvim"}, {
