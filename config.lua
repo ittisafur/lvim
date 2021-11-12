@@ -1,202 +1,142 @@
--- THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
--- general
-lvim.format_on_save = true
-lvim.lint_on_save = true
-lvim.colorscheme = "spacegray"
-
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = ","
--- add your own keymapping
-lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
--- unmap a default keymapping
--- lvim.keys.normal_mode["<C-Up>"] = ""
--- edit a default keymapping
--- lvim.keys.normal_mode["<C-q>"] = ":q<cr>"
+-- Lua Line default configs
+lvim.builtin.lualine.style = "default"
 
--- Change Telescope navigation to use j and k for navigation and n and p for history in both input and normal mode.
-lvim.builtin.telescope.on_config_done = function()
-  local actions = require "telescope.actions"
-  -- for input mode
-  lvim.builtin.telescope.defaults.mappings.i["<C-j>"] = actions.move_selection_next
-  lvim.builtin.telescope.defaults.mappings.i["<C-k>"] = actions.move_selection_previous
-  lvim.builtin.telescope.defaults.mappings.i["<C-n>"] = actions.cycle_history_next
-  lvim.builtin.telescope.defaults.mappings.i["<C-p>"] = actions.cycle_history_prev
-  -- for normal mode
-  lvim.builtin.telescope.defaults.mappings.n["<C-j>"] = actions.move_selection_next
-  lvim.builtin.telescope.defaults.mappings.n["<C-k>"] = actions.move_selection_previous
-end
+lvim.builtin.nvimtree.hide_dotfiles = 0
+-- general
+lvim.log.level = "debug"
+lvim.format_on_save = true
 
--- Use which-key to add extra bindings with the leader-key prefix
--- lvim.builtin.which_key.mappings["P"] = { "<cmd>lua require'telescope'.extensions.project.project{}<CR>", "Projects" }
--- lvim.builtin.which_key.mappings["t"] = {
---   name = "+Trouble",
---   r = { "<cmd>Trouble lsp_references<cr>", "References" },
---   f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
---   d = { "<cmd>Trouble lsp_document_diagnostics<cr>", "Diagnosticss" },
---   q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
---   l = { "<cmd>Trouble loclist<cr>", "LocationList" },
---   w = { "<cmd>Trouble lsp_workspace_diagnostics<cr>", "Diagnosticss" },
--- }
 
--- TODO: User Config for predefined plugins
+-- ColorScheme
+-- lvim.colorscheme = "onedarker"
+require('themes.tokyonight')
+
+
+
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 lvim.builtin.dashboard.active = true
 lvim.builtin.terminal.active = true
-lvim.builtin.nvimtree.side = "left"
+lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.show_icons.git = 0
-lvim.builtin.nvimtree.hide_dotfiles = 0
 
 -- if you don't want all the parsers change this to a table of the ones you want
-lvim.builtin.treesitter.ensure_installed = {}
+lvim.builtin.treesitter.ensure_installed = {
+  "bash",
+  "javascript",
+  "json",
+  "jsdoc",
+  "lua",
+  "python",
+  "typescript",
+  "tsx",
+  "vue",
+  "html",
+  "css",
+  "scss",
+  "regex",
+  "rust",
+  "yaml",
+  "php",
+  "graphql"
+}
+
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enabled = true
 
--- generic LSP settings
--- you can set a custom on_attach function that will be used for all the language servers
--- See <https://github.com/neovim/nvim-lspconfig#keybindings-and-completion>
--- lvim.lsp.on_attach_callback = function(client, bufnr)
---   local function buf_set_option(...)
---     vim.api.nvim_buf_set_option(bufnr, ...)
---   end
---   --Enable completion triggered by <c-x><c-o>
---   buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
--- end
--- you can overwrite the null_ls setup table (useful for setting the root_dir function)
--- lvim.lsp.null_ls.setup = {
---   root_dir = require("lspconfig").util.root_pattern("Makefile", ".git", "node_modules"),
--- }
--- or if you need something more advanced
--- lvim.lsp.null_ls.setup.root_dir = function(fname)
---   if vim.bo.filetype == "javascript" then
---     return require("lspconfig/util").root_pattern("Makefile", ".git", "node_modules")(fname)
---       or require("lspconfig/util").path.dirname(fname)
---   elseif vim.bo.filetype == "php" then
---     return require("lspconfig/util").root_pattern("Makefile", ".git", "composer.json")(fname) or vim.fn.getcwd()
---   else
---     return require("lspconfig/util").root_pattern("Makefile", ".git")(fname) or require("lspconfig/util").path.dirname(fname)
---   end
--- end
+-- Personal Configurations
 
--- set a formatter if you want to override the default lsp one (if it exists)
--- lvim.lang.python.formatters = {
---   {
---     exe = "black",
---     args = {}
---   }
--- }
--- set an additional linter
--- lvim.lang.python.linters = {
---   {
---     exe = "flake8",
---     args = {}
---   }
--- }
-lvim.lang.javascript.formatters = {
-  {
-    exe = "prettier" -- can be prettierd eslint, or eslint_d as well
-  },
-}
-lvim.lang.javascriptreact.formatters = {
-  {
-    exe = "prettier" -- can be prettierd eslint, or eslint_d as well
-  },
-}
+lvim.keys.normal_mode["<C-s>"] = ":w<CR>"
 
-lvim.lang.typescript.formatters = {
-  {
-    exe = "prettier" -- can be prettierd, eslint or eslint_d as well
-  },
-}
-lvim.lang.typescriptreact.formatters = {
-  {
-    exe = "prettier" -- can be prettierd, eslint or eslint_d as well
-  },
-}
-
-lvim.lang.html.formatters = { { exe = 'prettier' } }
-lvim.lang.css.formatter = {
-  {
-    exe = "prettier"
-  }
-}
-
-lvim.lang.php.formatters ={
+lvim.lang.php.formatters = {
   {
     exe = "phpcbf",
-    args = {"--standard=PSR12", "-q", "-" },
-    stdout = true
+    args = { "--standard=PSR12", "-q", "-" },
+    stdout = true,
+  },
+}
+
+lvim.plugins = {
+  {
+    -- Tokyo night colorscheme
+    "folke/tokyonight.nvim"
+  },
+  {
+    "norcalli/nvim-colorizer.lua",
+    config = function ()
+      require("colorizer").setup({ "*" }, {
+        RGB = true, -- #RGB hex codes
+        RRGGBB = true, -- #RRGGBB hex codes
+        RRGGBBAA = true, -- #RRGGBBAA hex codes
+        names = true,
+        rgb_fn = true, -- CSS rgb() and rgba() functions
+        hsl_fn = true, -- CSS hsl() and hsla() functions
+        css = true, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
+        css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
+      })
+    end
+  },
+  {
+    "metakirby5/codi.vim",
+     cmd = "Codi",
+  },
+  {
+    "karb94/neoscroll.nvim",
+    event = "WinScrolled",
+    config = function()
+    require('neoscroll').setup({
+          -- All these keys will be mapped to their corresponding default scrolling animation
+          mappings = {'<C-u>', '<C-d>', '<C-b>',
+          '<C-y>', '<C-e>', 'zt', 'zz', 'zb'},
+          hide_cursor = true,          -- Hide cursor while scrolling
+          stop_eof = true,             -- Stop at <EOF> when scrolling downwards
+          use_local_scrolloff = false, -- Use the local scope of scrolloff instead of the global scope
+          respect_scrolloff = false,   -- Stop scrolling when the cursor reaches the scrolloff margin of the file
+          cursor_scrolls_alone = true, -- The cursor will keep on scrolling even if the window cannot scroll further
+          easing_function = nil,        -- Default easing function
+          pre_hook = nil,              -- Function to run before the scrolling animation starts
+          post_hook = nil,              -- Function to run after the scrolling animation ends
+          })
+      end
+  },
+  {
+    "npxbr/glow.nvim",
+    ft = {"markdown"}
+  },
+  {
+    "arnaud-lb/vim-php-namespace"
+  },
+  {
+    "tpope/vim-surround",
+    keys = {"c", "d", "y"}
   }
 }
--- Additional Plugins
--- lvim.plugins = {
---     {"folke/tokyonight.nvim"}, {
---         "ray-x/lsp_signature.nvim",
---         config = function() require"lsp_signature".on_attach() end,
---         event = "InsertEnter"
---     }
--- }
+lvim.keys.normal_mode["<leader>u"] = "<Esc>:call PhpInsertUse()<CR>"
+local graphql_opts ={
+  filetypes = {
+      "vue",
+      "javascript",
+      "typescript",
+      "typescriptreact",
+      "javascriptreact",
+      "javascript.jsx",
+      "php",
+  }
+}
+require("lvim.lsp.manager").setup("graphql", graphql_opts)
 
--- Autocommands (https://neovim.io/doc/user/autocmd.html)
--- lvim.autocommands.custom_groups = {
---   { "BufWinEnter", "*.lua", "setlocal ts=8 sw=8" },
--- }
+-- Emmet Ls
+require('plug-settings.emmet')
+
+-- Tailwindcss
+require('plug-settings.tailwindcss')
+
+-- Change Telescope find_files with CTRL + F
 vim.api.nvim_set_keymap("n", "<C-f>", ":Telescope find_files<cr>", { noremap = true, silent = true })
--- disable <leader>f
-lvim.builtin.which_key.mappings["f"] = {}
+
 -- Transparent
-lvim.transparent_window = true
-lvim.plugins ={
-		{
-			"aca/emmet-ls",
-			config = function()
-				local lspconfig = require("lspconfig")
-				local configs = require("lspconfig/configs")
+lvim.transparent_window = false
 
-				local capabilities = vim.lsp.protocol.make_client_capabilities()
-				capabilities.textDocument.completion.completionItem.snippetSupport = true
-				capabilities.textDocument.completion.completionItem.resolveSupport = {
-					properties = {
-						"documentation",
-						"detail",
-						"additionalTextEdits",
-					},
-				}
-
-				if not lspconfig.emmet_ls then
-					configs.emmet_ls = {
-						default_config = {
-							cmd = { "emmet-ls", "--stdio" },
-							filetypes = {
-								"html",
-								"css",
-								"javascript",
-								"typescript",
-								"eruby",
-								"typescriptreact",
-								"javascriptreact",
-                "javascript.jsx",
-								"svelte",
-								"vue",
-                "php",
-							},
-							root_dir = function(fname)
-								return vim.loop.cwd()
-							end,
-							settings = {},
-						},
-					}
-				end
-				lspconfig.emmet_ls.setup({ capabilities = capabilities })
-			end,
-		},
-}
-local lsp = require "lsp"
-require("lspconfig").tailwindcss.setup {
-  cmd = {
-    "node",
-    DATA_PATH .. "/lspinstall/tailwindcss/tailwindcss-intellisense/extension/dist/server/tailwindServer.js",
-    "--stdio",
-  },
-  on_attach = lsp.common_on_attach,
-  on_init = lsp.common_on_init,
-}
+-- Autocommands
+require('autocommands').config()
