@@ -1,29 +1,13 @@
 local formatters = require "lvim.lsp.null-ls.formatters"
-local formatlint = require "lvim.lsp.null-ls"
 
-formatlint.setup {
-  formatters{
-  {
-    exe = "phpcbf",
-    args = { "--standard=PSR12", "-q", "-" },
-    stdout = true,
-  },
-  },
-  linters {
+formatters.setup {
     {
       exe = "phpcbf",
       args = { "--standard=PSR12", "-q", "-" },
       stdout = true,
-    },
-  }
+    }
 }
-formatters.setup{
-  {
-    exe = "phpcbf",
-    args = { "--standard=PSR12", "-q", "-" },
-    stdout = true,
-  },
-}
+
 lvim.keys.normal_mode["<leader>u"] = "<Esc>:call PhpInsertUse()<CR>"
 vim.opt.expandtab = true -- convert tabs to spaces
 -- PSR-12 Coding Style

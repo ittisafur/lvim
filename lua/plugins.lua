@@ -1,5 +1,35 @@
 lvim.plugins = {
   {
+    "mattn/emmet-vim",
+    ft = {
+      "gohtml",
+      "html",
+      "postcss",
+      "css",
+      "sass",
+      "scss",
+      "less",
+      "svelte",
+      "vue",
+      "javascript",
+      "typescript",
+      "typescriptreact",
+      "javascriptreact",
+      "javascript.jsx",
+      "php",
+    }
+  },
+  {
+    "p00f/nvim-ts-rainbow",
+  },
+  {
+    "windwp/nvim-ts-autotag",
+    event = "InsertEnter",
+    config = function()
+      require("nvim-ts-autotag").setup()
+    end,
+  },
+  {
     -- Tokyo night colorscheme
     "folke/tokyonight.nvim"
   },
@@ -52,6 +82,7 @@ lvim.plugins = {
   },
   {
     "tpope/vim-surround",
-    keys = {"c", "d", "y"}
+    keys = {"c", "d", "y"},
+    event = "BufRead"
   }
 }
