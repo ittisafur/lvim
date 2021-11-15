@@ -19,6 +19,7 @@ lvim.plugins = {
       "php",
     }
   },
+  -- Treesitters Plugin Start
   {
     "p00f/nvim-ts-rainbow",
   },
@@ -29,9 +30,13 @@ lvim.plugins = {
       require("nvim-ts-autotag").setup()
     end,
   },
+  -- Treesitters Plugin End
   {
     -- Tokyo night colorscheme
     "folke/tokyonight.nvim"
+  },
+  {
+    "folke/zen-mode.nvim"
   },
   {
     "rose-pine/neovim",

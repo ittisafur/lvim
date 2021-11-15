@@ -1,5 +1,6 @@
 - [ ] Which Key fix needed
 - [ ] Add Blade Vim
 - [ ] Add Spectre Vim and configure
-- [ ] Add Zen Mode
+- [x] Add Zen Mode
+- [ ] Add Zen Mode configures
 - [ ] Some More Color Schemes

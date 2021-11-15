@@ -19,3 +19,5 @@ local emmet_ls_opts = {
 }
 
 require("lvim.lsp.manager").setup("emmet_ls", emmet_ls_opts)
+vim.cmd[[autocmd FileType html,css,blade,php,javascript,jsx,hbs,vue,js,xml,php.css.html EmmetInstall]]
+
