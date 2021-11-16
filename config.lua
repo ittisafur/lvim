@@ -30,3 +30,5 @@ require('plug-settings.tailwindcss')
 
 -- Autocommands
 require('autocommands').config()
+
+require('plug-settings.whichkey')

@@ -1,6 +1,8 @@
-- [ ] Which Key fix needed
+- [ ] Which Key fix needed ( WIP )
 - [ ] Add Blade Vim
 - [ ] Add Spectre Vim and configure
 - [x] Add Zen Mode
 - [ ] Add Zen Mode configures
 - [ ] Some More Color Schemes
+- [ ] Add Todo Comments
+- [ ] Fix Lualine according to preference
