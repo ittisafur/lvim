@@ -2,13 +2,14 @@
 lvim.leader = ","
 
 -- Lua Line default configs
-lvim.builtin.lualine.style = "default"
+lvim.builtin.lualine.style = "lvim"
 
 -- Show dot files in NvimTree
 lvim.builtin.nvimtree.hide_dotfiles = 0
 
 -- general
-lvim.log.level = "debug"
+-- lvim.log.level = false -- Turn to "debug" while debugging
+lvim.debug = false
 lvim.format_on_save = true
 
 vim.opt.wrap = true
@@ -19,7 +20,7 @@ vim.opt.foldmethod = "manual" -- folding set to "expr" for treesitter based fold
 vim.opt.foldexpr = ""
 
 -- Transparent
-lvim.transparent_window = true
+-- lvim.transparent_window = false
 
 
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile

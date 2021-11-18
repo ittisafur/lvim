@@ -20,6 +20,27 @@ lvim.plugins = {
      cmd = "TroubleToggle",
   },
   {
+    "heavenshell/vim-jsdoc"
+  },
+  {
+    "Rican7/php-doc-modded"
+  },
+  {
+    "folke/todo-comments.nvim",
+    event = "BufRead",
+    config = function()
+      require("todo-comments").setup()
+    end,
+  },
+  {
+    "f-person/git-blame.nvim",
+    config = function()
+      vim.g.gitblame_message_template ='<summary> • <date> • <author>'
+      vim.g.gitblame_enabled = 1
+      vim.g.gitblame_highlight_group = 'LineNr'
+    end,
+  },
+  {
     "lukas-reineke/indent-blankline.nvim",
     event = "BufRead",
     setup = function()

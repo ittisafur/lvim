@@ -8,3 +8,10 @@ lvim.builtin.which_key.mappings["t"] = {
   l = { "<cmd>TroubleToggle loclist<cr>", "loclist" },
   r = { "<cmd>TroubleToggle lsp_references<cr>", "references" },
 }
+-- JsDoc and PhpDoc Modded
+lvim.builtin.which_key.mappings["d"] = {
+  name = "Doc Block",
+  j = {"<cmd>JsDoc<cr>", "Js Doc Block"},
+  f = {"<cmd>JsDocFormat<cr>", "Js Doc Format"},
+  p = {"<cmd>call PhpDocSingle()<cr>", "Php Doc Single"}
+}
