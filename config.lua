@@ -1,6 +1,7 @@
 -- General Settings
 require('general')
 
+
 -- Dashboard Settings
 require('plug-settings.dashboard')
 
@@ -13,9 +14,12 @@ require('treesitters')
 -- Personal Configurations
 require('keymaps.keymappings')
 
+
 -- Plugins
 require('plugins')
 
+-- Copilot
+require('plug-settings.copilot')
 -- Telescope Settings
 require('plug-settings.telescope')
 

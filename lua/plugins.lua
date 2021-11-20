@@ -1,4 +1,8 @@
 lvim.plugins = {
+  -- Eth Solidiy
+  {
+    "ChristianChiarulli/vim-solidity"
+  },
   {
     "mattn/emmet-vim",
   },
@@ -7,6 +11,9 @@ lvim.plugins = {
     run = "./install.sh",
     requires = "hrsh7th/nvim-cmp",
     event = "InsertEnter",
+  },
+  {
+    "github/copilot.vim"
   },
   {
     "ray-x/lsp_signature.nvim",

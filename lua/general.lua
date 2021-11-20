@@ -3,7 +3,6 @@ lvim.leader = ","
 
 -- Lua Line default configs
 lvim.builtin.lualine.style = "lvim"
-
 -- Show dot files in NvimTree
 lvim.builtin.nvimtree.hide_dotfiles = 0
 
