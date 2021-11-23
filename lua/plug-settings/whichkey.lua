@@ -12,6 +12,12 @@ lvim.builtin.which_key.mappings["t"] = {
 lvim.builtin.which_key.mappings["d"] = {
   name = "Doc Block",
   j = {"<cmd>JsDoc<cr>", "Js Doc Block"},
-  f = {"<cmd>JsDocFormat<cr>", "Js Doc Format"},
   p = {"<cmd>call PhpDocSingle()<cr>", "Php Doc Single"}
 }
+
+lvim.builtin.which_key.mappings["z"] = {
+  name = "zen mode",
+  m = {"<cmd>ZenMode<cr>", "zen mode"}
+}
+
+

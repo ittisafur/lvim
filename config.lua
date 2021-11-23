@@ -5,6 +5,7 @@ require('general')
 -- Dashboard Settings
 require('plug-settings.dashboard')
 
+
 -- ColorScheme
 require('themes.tokyonight')
 

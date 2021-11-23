@@ -7,6 +7,9 @@ lvim.plugins = {
     "mattn/emmet-vim",
   },
   {
+    "mg979/vim-visual-multi"
+  },
+  {
     "tzachar/cmp-tabnine",
     run = "./install.sh",
     requires = "hrsh7th/nvim-cmp",
@@ -76,7 +79,10 @@ lvim.plugins = {
     "folke/tokyonight.nvim"
   },
   {
-    "folke/zen-mode.nvim"
+    "folke/zen-mode.nvim",
+    config = function()
+      require("plug-settings.zenmode").config()
+    end,
   },
   {
     "rose-pine/neovim",
