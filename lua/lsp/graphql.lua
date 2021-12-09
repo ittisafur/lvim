@@ -9,4 +9,6 @@ local graphql_opts ={
       "php",
   }
 }
-require("lvim.lsp.manager").setup("graphql", graphql_opts)
+-- require("lvim.lsp.manager").setup("graphql", graphql_opts)
+vim.list_extend(lvim.lsp.override, { "graphql" })
+
