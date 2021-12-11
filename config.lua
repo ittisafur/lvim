@@ -1,5 +1,7 @@
 -- General Settings
 require('general')
+
+-- Gui Settings
 require('gui.gui-general')
 
 -- Dashboard Settings

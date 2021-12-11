@@ -11,6 +11,6 @@ vim.api.nvim_set_keymap("n", "<C-f>", ":Telescope find_files<cr>", { noremap = t
 
 -- show hidden files when running a find command in telescope
 -- lvim.builtin.telescope.pickers = { find_files = { hidden = true } }
-lvim.builtin.telescope.pickers = { find_files = {find_command = { "rg", "--files", "--follow", "--hidden" }}}
+-- lvim.builtin.telescope.pickers = { find_files = {find_command = { "rg", "--files", "--follow", "--hidden" }}}
 
 
