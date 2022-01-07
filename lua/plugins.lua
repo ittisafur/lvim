@@ -30,7 +30,7 @@ lvim.plugins = {
      cmd = "TroubleToggle",
   },
   {
-    "heavenshell/vim-jsdoc"
+    "heavenshell/vim-jsdoc",
   },
   {
     "Rican7/php-doc-modded"
@@ -77,6 +77,9 @@ lvim.plugins = {
   {
     -- Tokyo night colorscheme
     "folke/tokyonight.nvim"
+  },
+  {
+    "shaunsingh/nord.nvim"
   },
   {
     "folke/zen-mode.nvim",

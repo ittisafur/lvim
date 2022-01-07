@@ -8,7 +8,8 @@ require('gui.gui-general')
 require('plug-settings.dashboard')
 
 -- ColorScheme
-require('themes.tokyonight')
+-- require('themes.tokyonight')
+require('themes.nord')
 
 -- Treesitter
 require('treesitters')
@@ -18,7 +19,6 @@ require('keymaps.keymappings')
 
 -- Plugins
 require('plugins')
-
 -- Copilot
 require('plug-settings.copilot')
 

@@ -23,7 +23,7 @@ vim.opt.foldmethod = "manual" -- folding set to "expr" for treesitter based fold
 vim.opt.foldexpr = ""
 
 -- Transparent
--- lvim.transparent_window = false
+lvim.transparent_window = true
 
 
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
